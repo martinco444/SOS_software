@@ -1,0 +1,172 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio - SOS Software{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background-color: #f8f9fa;
+        padding: 4rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .feature-box {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .feature-box:hover {
+        transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #007bff;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">Bienvenido a SOS Software</h1>
+                <p class="lead">Tu solución integral para gestión de software y servicios tecnológicos.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Comenzar</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">Más información</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'img/banner.svg' %}" alt="SOS Software" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box bg-white text-center">
+                    <div class="feature-icon">💻</div>
+                    <h3>Desarrollo de Software</h3>
+                    <p>Creamos soluciones personalizadas adaptadas a tus necesidades específicas.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box bg-white text-center">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Mantenimiento</h3>
+                    <p>Ofrecemos servicios de mantenimiento y soporte para mantener tus sistemas funcionando sin problemas.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box bg-white text-center">
+                    <div class="feature-icon">📊</div>
+                    <h3>Consultoría</h3>
+                    <p>Asesoramiento experto para optimizar tus procesos tecnológicos y mejorar la eficiencia.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"SOS Software transformó completamente nuestros procesos internos. Su solución nos ayudó a aumentar la productividad en un 30%."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'img/avatar.svg' %}" class="rounded-circle me-3" alt="Cliente">
+                            <div>
+                                <h5 class="mb-0">Juan Pérez</h5>
+                                <small class="text-muted">Director de Tecnología, Empresa ABC</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"El equipo de soporte es excepcional. Siempre responden rápidamente y resuelven cualquier problema que tengamos."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'img/avatar.svg' %}" class="rounded-circle me-3" alt="Cliente">
+                            <div>
+                                <h5 class="mb-0">María González</h5>
+                                <small class="text-muted">Gerente de Operaciones, XYZ Corp</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">"La consultoría que recibimos nos ayudó a identificar áreas de mejora que ni siquiera sabíamos que existían. Altamente recomendado."</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <div class="d-flex align-items-center">
+                            <img src="{% static 'img/avatar.svg' %}" class="rounded-circle me-3" alt="Cliente">
+                            <div>
+                                <h5 class="mb-0">Carlos Rodríguez</h5>
+                                <small class="text-muted">CEO, Startup Innovadora</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5">
+    <div class="container">
+        <div class="p-5 text-center bg-primary text-white rounded">
+            <h2>¿Listo para comenzar?</h2>
+            <p class="lead">Contáctanos hoy mismo para una consulta gratuita</p>
+            <button class="btn btn-light btn-lg">Contactar ahora</button>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // JavaScript adicional específico para la página de inicio
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Página de inicio cargada');
+        
+        // Ejemplo: Animación simple para los botones de llamada a la acción
+        const ctaButtons = document.querySelectorAll('.btn-lg');
+        ctaButtons.forEach(button => {
+            button.addEventListener('mouseover', function() {
+                this.classList.add('pulse');
+            });
+            button.addEventListener('mouseout', function() {
+                this.classList.remove('pulse');
+            });
+        });
+    });
+</script>
+{% endblock %}

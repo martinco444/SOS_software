@@ -1,0 +1,8 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular -->
+  <circle cx="25" cy="25" r="25" fill="#e0e0e0" />
+  
+  <!-- Silueta de persona -->
+  <circle cx="25" cy="18" r="8" fill="#a0a0a0" />
+  <path d="M25,28 C17,28 10,35 10,42 L40,42 C40,35 33,28 25,28 Z" fill="#a0a0a0" />
+</svg>

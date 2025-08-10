@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SOS Software{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        {% block header %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">SOS Software</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+                        </li>
+                        <!-- Agrega más elementos de menú según necesites -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        {% block content %}
+        <div class="container mt-4">
+            <h1>Bienvenido a SOS Software</h1>
+            <p>Este es el contenido predeterminado. Reemplaza este bloque en tus plantillas.</p>
+        </div>
+        {% endblock %}
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        {% block footer %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOS Software</h5>
+                    <p>Tu solución de software confiable</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; {% now "Y" %} SOS Software. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </footer>
+
+    <!-- Bootstrap JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts personalizados -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
