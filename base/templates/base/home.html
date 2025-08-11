@@ -2,26 +2,34 @@
 
 {% load static %}
 
-{% block title %}Inicio - SOS Software{% endblock %}
+{% block title %}Inicio - S.O.S Software{% endblock %}  
 
 {% block extra_css %}
 <style>
-    .hero-section {
-        background-color: #f8f9fa;
+    /* .hero-section {
+        background-color: #ffffff;
         padding: 4rem 0;
         margin-bottom: 2rem;
-    }
+    } */
     
     .feature-box {
         padding: 1.5rem;
         border-radius: 0.5rem;
-        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
         margin-bottom: 1.5rem;
         transition: transform 0.3s ease;
+        background-color: #222222;
+        color: white;
     }
     
     .feature-box:hover {
         transform: translateY(-5px);
+    }
+
+    .feature-box {
+        background-color: #222222; /* Fondo gris oscuro */
+        color: white; /* Texto blanco */
+        border: 1px solid #88ff00; /* Borde verde */
     }
     
     .feature-icon {
@@ -29,6 +37,72 @@
         margin-bottom: 1rem;
         color: #007bff;
     }
+        /* Personalización de colores de botones */
+    .btn-primary {
+        background-color: #00ff3c; /* Verde */
+        border-color: #00ff3c;
+    }
+    
+    .btn-primary:hover {
+        background-color: #00ff37;
+        border-color: #00ff37;
+    }
+    
+    .btn-outline-secondary {
+        color: #00ff37; 
+        border-color: #00ff37;
+    }
+    
+    .btn-outline-secondary:hover {
+        background-color: #00ff37;
+        border-color: #00ff37;
+        color: white;
+    }
+    
+    .btn-light {
+        background-color: #00ff37;
+        border-color: #00ff37;
+        color: white;
+    }
+    
+    .btn-light:hover {
+        background-color: #00ff37;
+        border-color: #00ff37;
+    }
+
+    .card {
+    background-color: #222222; /* Fondo gris oscuro */
+    color: white; /* Texto blanco */
+    border: 1px solid #88ff00; /* Borde verde */
+}
+
+    .card-body {
+        background-color: #222222;
+        color: white;
+    }
+
+    .text-muted {
+        color: #cccccc !important; /* Texto gris claro para subtítulos */
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card {
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease;
+        background-color: #222222;
+        color: #00ff37;
+    }
+
+    .col-lg-6{
+        margin-top: 5px;
+    }
+
 </style>
 {% endblock %}
 
@@ -38,7 +112,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="display-4 fw-bold">Bienvenido a SOS Software</h1>
+                <h1 class="display-4 fw-bold">Bienvenido a S.O.S Software</h1>
                 <p class="lead">Tu solución integral para gestión de software y servicios tecnológicos.</p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                     <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Comenzar</button>
@@ -46,7 +120,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <img src="{% static 'img/banner.svg' %}" alt="SOS Software" class="img-fluid rounded">
+                <img src="{% static 'img/SOSoftware.svg' %}" alt="SOS Software" class="img-fluid rounded">
             </div>
         </div>
     </div>
@@ -58,21 +132,21 @@
         <h2 class="text-center mb-5">Nuestros Servicios</h2>
         <div class="row">
             <div class="col-md-4">
-                <div class="feature-box bg-white text-center">
+                <div class="feature-box text-center">
                     <div class="feature-icon">💻</div>
                     <h3>Desarrollo de Software</h3>
-                    <p>Creamos soluciones personalizadas adaptadas a tus necesidades específicas.</p>
+                    <p>Creamos soluciones personalizadas adaptadas a tu medida y según tus necesidades específicas.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="feature-box bg-white text-center">
+                <div class="feature-box text-center">
                     <div class="feature-icon">🔧</div>
                     <h3>Mantenimiento</h3>
                     <p>Ofrecemos servicios de mantenimiento y soporte para mantener tus sistemas funcionando sin problemas.</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="feature-box bg-white text-center">
+                <div class="feature-box text-center">
                     <div class="feature-icon">📊</div>
                     <h3>Consultoría</h3>
                     <p>Asesoramiento experto para optimizar tus procesos tecnológicos y mejorar la eficiencia.</p>
@@ -83,7 +157,7 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-dark">
     <div class="container">
         <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
         <div class="row">
@@ -139,10 +213,20 @@
     </div>
 </section>
 
+<section class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="text-center mb-5">Síguenos en Redes Sociales</h2>
+        <div class="text-center">
+            <!-- enlaces a redes sociales -->
+            <a href="https://www.linkedin.com/company/sos-software-latam/about/" target="_blank"><i class="fab fa-linkedin fa-4x"></i></a>
+        </div>  
+    </div>
+</section>
+
 <!-- Call to Action -->
 <section class="py-5">
     <div class="container">
-        <div class="p-5 text-center bg-primary text-white rounded">
+        <div class="p-5 text-center bg-dark text-white rounded">
             <h2>¿Listo para comenzar?</h2>
             <p class="lead">Contáctanos hoy mismo para una consulta gratuita</p>
             <button class="btn btn-light btn-lg">Contactar ahora</button>

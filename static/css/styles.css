@@ -2,21 +2,82 @@
 
 /* Variables globales */
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
+    --primary-color: #ffffff;
+    --secondary-color: #48ff00;
     --success-color: #28a745;
     --info-color: #17a2b8;
     --warning-color: #ffc107;
     --danger-color: #dc3545;
     --light-color: #f8f9fa;
     --dark-color: #343a40;
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
+
+/* Tema oscuro global */
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Todas las secciones con fondo negro */
+section {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Contenedores */
+.container {
+    background-color: transparent;
+    color: var(--text-color);
 }
 
 /* Estilos generales */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Tema oscuro global */
+section {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.container {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+/* Sobrescribir fondos de Bootstrap */
+.bg-light {
+    background-color: #333333 !important;
+    color: var(--text-color) !important;
+}
+
+.bg-white {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Cards y elementos */
+.card {
+    background-color: #222222 !important;
+    color: var(--text-color) !important;
+    border-color: #444444 !important;
+}
+
+.card-body {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
+
+.card-footer {
+    background-color: #333333 !important;
+    color: var(--text-color) !important;
+    border-color: #444444 !important;
 }
 
 /* Encabezados */
