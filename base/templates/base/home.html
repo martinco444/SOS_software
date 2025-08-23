@@ -322,7 +322,58 @@
         <div class="p-5 text-center bg-dark text-white rounded">
             <h2>¿Listo para comenzar?</h2>
             <p class="lead">Contáctanos hoy mismo para una consulta gratuita</p>
-            <button class="btn btn-light btn-lg">Contactar ahora</button>
+            <button id="contact-btn" class="btn btn-light btn-lg">Contactar ahora</button>
+        </div>
+        <!-- Mensajes de Django -->
+        {% if messages %}
+            <div class="mt-3">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <!-- Sección de formulario de contacto oculta -->
+        <div id="contact-form-section" style="display:none; margin-top:2rem;">
+            <form id="contact-form" class="bg-dark text-white p-4 rounded" method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Número de teléfono</label>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Número de teléfono" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Asunto" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="body" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="body" name="body" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Contactar</button>
+            </form>
         </div>
     </div>
 </section>
@@ -344,6 +395,18 @@
                 this.classList.remove('pulse');
             });
         });
+        // Mostrar el formulario al hacer clic en el botón
+        document.getElementById('contact-btn').addEventListener('click', function() {
+            document.getElementById('contact-form-section').style.display = 'block';
+            this.style.display = 'none';
+        });
+
+        // Enviar el formulario al servidor
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            // El formulario se enviará normalmente al servidor
+            // No necesitamos preventDefault() ya que queremos el comportamiento por defecto
+        });
+
     });
 </script>
 {% endblock %}
