@@ -99,6 +99,34 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Iconos de redes sociales - Mayor especificidad */
+section a .fab {
+    color: var(--text-color) !important;
+    transition: all 0.3s ease;
+    margin-right: 15px
+}
+
+section a:hover .fab {
+    color: var(--secondary-color) !important;
+    transform: scale(1.1);
+    text-decoration: none !important;
+}
+
+/* Sobrescribir estilos de enlaces para iconos */
+section a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Estilos específicos para cada red social */
+section a:hover .fa-linkedin {
+    color: #0077b5 !important;
+}
+
+section a:hover .fa-instagram {
+    color: #e4405f !important;
+}
+
 /* Botones personalizados */
 .btn-custom {
     background-color: var(--primary-color);
