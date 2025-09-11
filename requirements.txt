@@ -1,2 +1,6 @@
 Django>=5.0,<6.0
 gunicorn
+psycopg2-binary  # Para PostgreSQL
+dj-database-url  # Para configurar la base de datos
+whitenoise       # Para archivos estáticos
+python-decouple  # Para manejar variables de entorno

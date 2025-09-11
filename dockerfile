@@ -9,3 +9,9 @@ COPY requirements.txt /code/
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY . /code/
+
+# Recopilar archivos estáticos
+RUN python manage.py collectstatic --noinput
+
+# El comando se configurará en Railway
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
