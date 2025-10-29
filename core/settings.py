@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Seguridad
 SECRET_KEY = config('SECRET_KEY', default='default-dev-only-key')
-DEBUG = 'RAILWAY_ENVIRONMENT' not in os.environ
+DEBUG = 'RENDER_ENVIRONMENT' not in os.environ
 ALLOWED_HOSTS = ['*']
 
 # Apps
@@ -62,14 +62,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database: SQLite local por defecto, Railway usa DATABASE_URL
+# Database: SQLite local por defecto, Render usa DATABASE_URL
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-if 'RAILWAY_ENVIRONMENT' in os.environ:
+if 'RENDER_ENVIRONMENT' in os.environ:
     DATABASES['default'] = dj_database_url.config(
         default=f"sqlite:///{BASE_DIR}/db.sqlite3",
         conn_max_age=600
