@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Seguridad
 SECRET_KEY = config('SECRET_KEY', default='default-dev-only-key')
 DEBUG = 'RAILWAY_ENVIRONMENT' not in os.environ
-ALLOWED_HOSTS = ['*'] if 'RENDER_ENVIRONMENT' in os.environ else []
+ALLOWED_HOSTS = ['*']
 
 # Apps
 INSTALLED_APPS = [
